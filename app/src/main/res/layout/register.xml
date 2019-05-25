@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/ttt"
+>
+
+    <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/logo"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIDO MAMPIR"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Nama"
+                android:textColorHint="#fff"
+                android:backgroundTint="#fff"
+                android:textColor="#fff"
+                android:id="@+id/et_nama"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#fff"
+                android:inputType="textPassword"
+                android:hint="Username"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:id="@+id/et_uname"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#fff"
+                android:textColorHint="#fff"
+                android:inputType="textPassword"
+                android:hint="Email"
+                android:textColor="#fff"
+                android:id="@+id/et_email"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#fff"
+                android:inputType="textPassword"
+                android:textColorHint="#fff"
+                android:hint="Password"
+                android:textColor="#fff"
+                android:id="@+id/et_password"/>
+
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:id="@+id/btn_login"
+                android:text="Register"
+                android:textAlignment="center"
+                android:layout_gravity="right"
+                android:layout_marginRight="25dp"/>
+
+
+    </LinearLayout>
+</LinearLayout>

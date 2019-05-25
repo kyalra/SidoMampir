@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "749133904700",
+    "firebase_url": "https://sido-mampir.firebaseio.com",
+    "project_id": "sido-mampir",
+    "storage_bucket": "sido-mampir.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749133904700:android:728cf7679020a864",
+        "android_client_info": {
+          "package_name": "com.android.projectara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749133904700-19qrnh7t4fm4dq9mtgc3ujumvmqnj4ri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.projectara",
+            "certificate_hash": "d55258ad1a8da0e93fa18510705e116dc8465ea1"
+          }
+        },
+        {
+          "client_id": "749133904700-1v440bh5bdgud4rfg7u7richihv4kdnq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMd3WhYMBs1p3A_nvRlBG6k8Bv0Mw8lKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749133904700-1v440bh5bdgud4rfg7u7richihv4kdnq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

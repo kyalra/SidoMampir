@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">ProjectARA</string>
+    <string name="app_name">Sido Mampir</string>
+    <string name="openDrawer">Drawer dibuka</string>
+    <string name="closeDrawer">Drawer ditutup</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Log Out</string>
+
+    <string name="menu_profil">Profil</string>
+    <string name="menu_forum">Forum</string>
+    <string name="menu_chat">Chat</string>
+    <string name="menu_maps">Maps</string>
+    <string name="navigation_view_logout">Settings</string>
+    <string name="navigation_view_item_5">About</string>
 </resources>
