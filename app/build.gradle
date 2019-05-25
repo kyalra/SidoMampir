@@ -55,6 +55,11 @@ dependencies {
 //    implementation platform("com.google.firebase:firebase-bom
     implementation 'com.firebaseui:firebase-ui-database:3.3.1'
     implementation 'de.hdodenhof:circleimageview:1.3.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+
+    //implementation Drawerlayout dan navigation
+
+    implementation 'com.android.support:support-v4:28.0.0'
 }
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
 
