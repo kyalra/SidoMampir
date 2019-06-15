@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_logout">Log Out</string>
-
+    <string name="mapbox_token">pk.eyJ1IjoiYWZpYXJ5YXVkeSIsImEiOiJjand3eG5mdTEwcDI1NDNuNTAxdTduNzZnIn0.M3c3szim6OsH-p1vibrGPA</string>
     <string name="menu_profil">Profil</string>
     <string name="menu_forum">Forum</string>
     <string name="menu_chat">Chat</string>
