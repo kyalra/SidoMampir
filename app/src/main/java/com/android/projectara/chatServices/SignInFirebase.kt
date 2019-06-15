@@ -5,8 +5,12 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import com.android.projectara.Drawer
 import com.android.projectara.R
+import com.android.projectara.email.LoginWithEmail
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -16,19 +20,43 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
+
+
 class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener,
     View.OnClickListener {
     private val TAG = "ActivitySign"
     private val RC_SIGN_IN = 9001
     private var mSignInButton: SignInButton? = null
     private var mGoogleApiClient: GoogleApiClient? = null
+    private var mAuthListener: FirebaseAuth.AuthStateListener? = null
     //firebase instance variable
     private var mfirebaseAuth: FirebaseAuth? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
+        //Initialize FirebaseAuth
+        mfirebaseAuth = FirebaseAuth.getInstance()
 
+        val user = mfirebaseAuth!!.currentUser
+        if (user != null){
+            val intent = Intent(this@SignInFirebase,Drawer::class.java)
+            startActivity(intent)
+        }
+        var register = findViewById<View>(R.id.tv_regis)
+        register.setOnClickListener {
+            val intent = Intent(this@SignInFirebase,Register::class.java)
+            startActivity(intent)
+        }
+        var Login = findViewById<View>(R.id.btn_login) as Button
+        var password = findViewById<View>(R.id.et_password_login) as EditText
+        var email = findViewById<View>(R.id.et_email_login) as EditText
+        Login.setOnClickListener {
+            login(
+                email.getText().toString(), password.getText().toString()
+            )
+        }
         //Assign fields
         mSignInButton = findViewById<View>(R.id.sign_in_firebase) as SignInButton
         //set Click listener
@@ -43,8 +71,8 @@ class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
             .enableAutoManage(this /*FragmentActivity*/, this /*OnConnectionFailedListener*/)
             .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build()
 
-        //Initialize FirebaseAuth
-        mfirebaseAuth = FirebaseAuth.getInstance()
+
+
     }
 
     override fun onConnectionFailed(p0: ConnectionResult) {
@@ -59,11 +87,29 @@ class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
     }
 
     private fun signIn() {
+
         val signInIntent = Auth.GoogleSignInApi
             .getSignInIntent(mGoogleApiClient)
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
+    private fun login(email:String,password:String){
+        mfirebaseAuth!!.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener{
 
+                if (!it.isSuccessful){ return@addOnCompleteListener
+                    val intent = Intent (this, LoginWithEmail::class.java)
+                    startActivity(intent)
+                }
+                else
+                    Toast.makeText(this, "Succesfully Login", Toast.LENGTH_SHORT).show()
+                val intent = Intent (this@SignInFirebase, Drawer::class.java)
+                startActivity(intent)
+            }
+            .addOnFailureListener{
+                Log.d("Main", "Failed Login: ${it.message}")
+                Toast.makeText(this, "Email/Password incorrect", Toast.LENGTH_SHORT).show()
+            }
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         //result returned from launching the Intent from google
@@ -96,7 +142,7 @@ class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
                 ).show()
             } else {
                 startActivity(
-                    Intent(this@SignInFirebase, MainMessage::class.java)
+                    Intent(this@SignInFirebase, Drawer::class.java)
                 )
                 finish()
             }

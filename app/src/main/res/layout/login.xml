@@ -35,7 +35,7 @@
                 android:textColorHint="#fff"
                 android:backgroundTint="#fff"
                 android:textColor="#fff"
-                android:id="@+id/et_email"/>
+                android:id="@+id/et_email_login"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:textColorHint="#fff"
                 android:hint="Password"
                 android:textColor="#fff"
-                android:id="@+id/et_password"/>
+                android:id="@+id/et_password_login"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

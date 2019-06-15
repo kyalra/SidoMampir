@@ -30,28 +30,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Nama"
-                android:textColorHint="#fff"
-                android:backgroundTint="#fff"
-                android:textColor="#fff"
-                android:id="@+id/et_nama"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:backgroundTint="#fff"
-                android:inputType="textPassword"
-                android:hint="Username"
-                android:textColorHint="#fff"
-                android:textColor="#fff"
-                android:id="@+id/et_uname"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
                 android:backgroundTint="#fff"
                 android:textColorHint="#fff"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:hint="Email"
                 android:textColor="#fff"
                 android:id="@+id/et_email"/>
@@ -71,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#fff"
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_regis"
                 android:text="Register"
                 android:textAlignment="center"
                 android:layout_gravity="right"
