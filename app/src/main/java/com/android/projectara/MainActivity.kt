@@ -3,7 +3,7 @@ package com.android.projectara
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import com.android.projectara.modal.Post
+import com.android.projectara.model.Post
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {

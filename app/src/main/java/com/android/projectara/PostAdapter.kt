@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.android.projectara.modal.Post
+import com.android.projectara.model.Post
 import com.squareup.picasso.Picasso
 
 class PostAdapter (val posts: ArrayList<Post>, val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
