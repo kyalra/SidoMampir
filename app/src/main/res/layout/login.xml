@@ -3,7 +3,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/ttt"
+              android:background="#ffffff"
 >
 
     <ImageButton
@@ -11,15 +11,9 @@
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:background="@drawable/logo"/>
+            android:background="@mipmap/smlogo"/>
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SIDO MAMPIR"
-            android:textColor="#fff"
-            android:textSize="30dp"
-            android:textAlignment="center"/>
+
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -32,36 +26,37 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:hint="Email"
-                android:textColorHint="#fff"
-                android:backgroundTint="#fff"
-                android:textColor="#fff"
+                android:textColorHint="#000"
+                android:backgroundTint="#000"
+                android:textColor="#000"
                 android:id="@+id/et_email"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:backgroundTint="#fff"
+                android:backgroundTint="#000"
                 android:inputType="textPassword"
-                android:textColorHint="#fff"
+                android:textColorHint="#000"
                 android:hint="Password"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:id="@+id/et_password"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Register"
+                android:text="Daftar Disini."
                 android:id="@+id/tv_regis"
                 android:paddingLeft="10dp"
                 android:textSize="15dp"
-                android:textColor="#00E9FF"
+                android:textColor="#00288F"
                 android:layout_margin="20dp"/>
 
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                android:background="#031CE2"
                 android:id="@+id/btn_login"
                 android:text="Login"
+                android:textColor="#fff"
                 android:textAlignment="center"
                 android:layout_gravity="right"
                 android:layout_marginRight="20dp"/>

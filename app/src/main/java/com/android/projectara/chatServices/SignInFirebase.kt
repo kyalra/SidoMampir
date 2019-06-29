@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.android.projectara.Dashboard
 import com.android.projectara.R
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -95,10 +96,9 @@ class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                startActivity(
-                    Intent(this@SignInFirebase, MainMessage::class.java)
-                )
-                finish()
+               Toast.makeText(this,"Yeay Berhasil Login",Toast.LENGTH_SHORT).show()
+                val inten= Intent(this,Dashboard::class.java)
+                startActivity(inten)
             }
         }
     }
