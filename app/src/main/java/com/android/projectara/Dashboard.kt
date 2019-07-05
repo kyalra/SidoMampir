@@ -1,5 +1,6 @@
 package com.android.projectara
 
+import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -11,6 +12,7 @@ import android.support.design.widget.NavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
+import com.android.projectara.fragment.ChatFragment
 
 class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -72,7 +74,9 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
             }
             R.id.nav_chat -> {
-
+                val fragment=ChatFragment()
+                addFragment(fragment)
+                return true
             }
             R.id.nav_maps -> {
 
@@ -87,5 +91,9 @@ class Dashboard : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun addFragment(fragment: Fragment) {
+
     }
 }
