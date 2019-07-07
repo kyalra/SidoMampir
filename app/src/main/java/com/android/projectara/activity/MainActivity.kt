@@ -10,9 +10,8 @@ import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toolbar
 import com.android.projectara.R
+
 import com.android.projectara.chatServices.NotificationServices
 import com.android.projectara.data.Tools
 import com.android.projectara.fragment.ChatFragment
@@ -28,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolbar = findViewById(R.id.toolbar)
+//        toolbar = findViewById(R.id.toolbar)
         fab = findViewById(R.id.add)
 
-        prepareActionBar(toolbar)
+//        prepareActionBar(toolbar)
         initComponent()
 
         fab.setOnClickListener {
@@ -39,18 +38,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // for system bar in lollipop
-            Tools.systemBarLolipop(this)
-            //Create the scheduler
-            mJobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
-            val builder = JobInfo.Builder(1, ComponentName(packageName, NotificationServices::class.java!!.getName()))
-            builder.setPeriodic(900000)
-            //If it needs to continue even after boot, persisted needs to be true
-            //builder.setPersisted(true);
-            builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
-            mJobScheduler.schedule(builder.build())
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+////            // for system bar in lollipop
+////            Tools.systemBarLolipop(this)
+////            //Create the scheduler
+////            mJobScheduler = getSystemService(Context.JOB_SCHEDULER_SERVICE) as JobScheduler
+////            val builder = JobInfo.Builder(1, ComponentName(packageName, NotificationServices::class.java!!.getName()))
+////            builder.setPeriodic(900000)
+////            //If it needs to continue even after boot, persisted needs to be true
+////            //builder.setPersisted(true);
+////            builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+////            mJobScheduler.schedule(builder.build())
+////        }
     }
 
     private fun initComponent() {
@@ -58,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         val ctf = ChatFragment()
         //icf.setRetainInstance(true);
-        fragmentTransaction.add(R.id.main_container, ctf, "Chat History")
+        fragmentTransaction.add(R.id.mmain_container, ctf, "Chat History")
         fragmentTransaction.commit()
 
     }

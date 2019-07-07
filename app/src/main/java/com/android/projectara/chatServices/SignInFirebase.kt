@@ -8,6 +8,9 @@ import android.view.View
 import android.widget.Toast
 import com.android.projectara.Dashboard
 import com.android.projectara.R
+import com.android.projectara.activity.ChatDetailActivity
+import com.android.projectara.activity.MainActivity
+import com.android.projectara.activity.SelectFriendActivity
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -16,6 +19,9 @@ import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.FirebaseDatabase
+
+
 
 class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener,
     View.OnClickListener {
@@ -96,8 +102,14 @@ class SignInFirebase : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
+                val map = HashMap<String, String>()
+                map.put("email", task.result!!.user.email!!)
+                map.put("name", task.result!!.user.displayName!!)
+                map.put("id", task.result!!.user.uid)
+                map.put("photo", task.result!!.user.photoUrl.toString())
+                FirebaseDatabase.getInstance().getReference("users").child(task.result!!.user.uid).setValue(map)
                Toast.makeText(this,"Yeay Berhasil Login",Toast.LENGTH_SHORT).show()
-                val inten= Intent(this,Dashboard::class.java)
+                val inten= Intent(this,MainActivity::class.java)
                 startActivity(inten)
             }
         }

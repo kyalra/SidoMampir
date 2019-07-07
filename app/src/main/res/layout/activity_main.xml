@@ -5,11 +5,11 @@
                 android:layout_width="match_parent"
                 android:fitsSystemWindows="true">
 
-    <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+    <!--<include-->
+            <!--android:id="@+id/toolbar"-->
+            <!--layout="@layout/toolbar" />-->
     <LinearLayout
-            android:id="@+id/main_container"
+            android:id="@+id/mmain_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar"
@@ -23,6 +23,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/ic_discuss" />
+            />
 
 </RelativeLayout>
